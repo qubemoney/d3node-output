@@ -7,6 +7,8 @@ function captureImage (html, { jpeg, quality, path, viewport, puppeteer_options 
     screenShotOptions.type = 'jpeg'
   }
 
+  console.log(JSON.stringify(puppeteer_options, null, 2));
+
   return puppeteer.launch(puppeteer_options)
   .then((browser) => {
     browser.newPage()
