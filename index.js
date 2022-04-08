@@ -56,10 +56,10 @@ module.exports = function (dest, d3n, opts = {}, callback) {
     console.log(`>> Exported "${dest}.svg"`);
   });
 
-  const { width, height, jpeg, quality } = opts;
+  const { width, height, jpeg, quality, puppeteer_options } = opts;
   let viewport = false
   if (width && height) viewport = { width, height }
 
   const ext = jpeg ? 'jpg' : 'png'
-  captureImage(html, { jpeg, quality, path: `${dest}.${ext}`, viewport }, callback);
+  captureImage(html, { jpeg, quality, path: `${dest}.${ext}`, viewport, puppeteer_options }, callback);
 };
